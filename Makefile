@@ -35,3 +35,8 @@ mykernel.iso: mykernel.bin
 	echo '}' >> iso/boot/grub/grub.cfg
 	grub-mkrescue --output=$@ iso
 	rm -rf iso
+	
+# just in case if you are running your development environment in host os.
+# run: mykernel.iso
+#	(killall VirtualBox && sleep 1) || true
+#	VirtualBox --startvm "Shivank OS" &
