@@ -5,7 +5,7 @@ LDPARAMS = -melf_i386
 
 
 
-objects = loader.o gdt.o kernel.o
+objects = loader.o gdt.o port.o kernel.o
 
 %.o: %.cpp
 	g++ $(GPPPARAMS) -o $@ -c $<
@@ -36,6 +36,11 @@ mykernel.iso: mykernel.bin
 	grub-mkrescue --output=$@ iso
 	rm -rf iso
 	
+	
+	
+.PHONY: clean
+clean:
+	rm -f $(objects) mykernel.bin 
 # just in case if you are running your development environment in host os.
 # run: mykernel.iso
 #	(killall VirtualBox && sleep 1) || true
