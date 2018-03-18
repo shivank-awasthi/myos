@@ -5,7 +5,7 @@ LDPARAMS = -melf_i386
 
 
 
-objects = loader.o gdt.o port.o kernel.o
+objects = loader.o gdt.o port.o interruptstubs.o interrupts.o kernel.o
 
 %.o: %.cpp
 	g++ $(GPPPARAMS) -o $@ -c $<
