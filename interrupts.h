@@ -22,7 +22,7 @@ protected:
         uint8_t access;
         uint16_t handlerAddressHighBits;
         
-    } __attribute__ ((packed));
+    } __attribute__((packed));
     
     
     static GateDescriptor interruptDescriptorTable[256];
@@ -31,7 +31,7 @@ protected:
     {
         uint16_t size;
         uint32_t base;
-    } __attribute__ ((packed));
+    } __attribute__((packed));
     
     static void SetInterruptDescriptorTableEntry(
         uint8_t interruptNumber,
