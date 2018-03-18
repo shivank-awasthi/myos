@@ -80,9 +80,14 @@ void InterruptManager::Activate()
 
 uint32_t InterruptManager::handleInterrupt(uint8_t interruptNumber, uint32_t esp)
 {
+    char* foo = "INTERRUPT 0x00";
+    char* hex = "0123456789ABCDEF";
+    
+    foo[12] = hex[(interruptNumber >> 4) & 0xF];
+    foo[13] = hex[interruptNumber & 0xF];
+    printf(foo);
     
     
-    printf(" INTERRUPT");
     
     return esp;
 }
