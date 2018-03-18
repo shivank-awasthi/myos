@@ -55,10 +55,14 @@ extern "C" void kernelMain(void* multiboot_structure, uint32_t magicnumber )
 {
     printf("Hello World! ---- created by shivank\n");
     printf("Hello World! ---- created by shivank");
+    printf("Loading global descriptors");
     GlobalDescriptorTable gdt;
+    printf("gdt loaded, now loading interrupts");
     InterruptManager interrupts(&gdt);
+    printf("interrupts loaded");
     
     interrupts.Activate();
+    printf("interrupts activated");
     
     while(1);
 }
